@@ -22,6 +22,9 @@ class MyApp extends StatelessWidget {
           builder: (context, orientation) {
             SizeConfig().init(constraints, orientation);
             return GetMaterialApp(
+              theme: ThemeData(
+                scaffoldBackgroundColor: Color(0xffF3F5F6),
+              ),
               debugShowCheckedModeBanner: false,
               home: Splash(),
             );
