@@ -15,7 +15,7 @@ class Splash extends StatelessWidget {
     //     () => Get.offAll(
     //           OnBoarding(),
     //           transition: Transition.downToUp,
-    //           // :Duration(milliseconds: 400),
+              // :Duration(milliseconds: 400),
     //           curve: Curves.fastOutSlowIn,
     //         ));
     return Scaffold(

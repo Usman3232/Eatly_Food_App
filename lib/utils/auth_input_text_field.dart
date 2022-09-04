@@ -70,6 +70,7 @@ class _TextInputFieldViewState extends State<AuthTextInputField> {
         hintText: widget.hintText,
         hintStyle:
             TextStyle(fontSize: widget.hintSize, color: widget.hintcolor),
+            prefixIcon: widget.prefixIcon,
         suffixIcon: widget.isPassword
             ? GestureDetector(
                 onTap: () {

@@ -1,4 +1,6 @@
 import 'package:eatly_foodapp/utils/size_config.dart';
+import 'package:eatly_foodapp/views/bottom_navigation/bottom_navigation_tab.dart';
+import 'package:eatly_foodapp/views/homescreen/homescreen.dart';
 import 'package:eatly_foodapp/views/splash/splash.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -26,7 +28,9 @@ class MyApp extends StatelessWidget {
                 scaffoldBackgroundColor: Color(0xffF3F5F6),
               ),
               debugShowCheckedModeBanner: false,
-              home: Splash(),
+              // home: Splash(),
+              // home: HomeScreen(),
+              home: BottomBar(),
             );
           },
         );
