@@ -63,7 +63,10 @@ class _MostPopularCardState extends State<MostPopularCard> {
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Image.asset(widget.image),
+                Image.asset(
+                  widget.image,
+                  height: SizeConfig.imageSizeMultiplier * 37,
+                ),
                 Padding(
                   padding:
                       const EdgeInsets.only(left: 10, right: 10, bottom: 10),

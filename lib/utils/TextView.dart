@@ -6,6 +6,7 @@ class TextView extends StatelessWidget {
   final FontWeight? fontWeight;
   final TextDecoration? line;
   final double? size;
+  final String? fontFamily;
 
   const TextView(
       {Key? key,
@@ -13,7 +14,8 @@ class TextView extends StatelessWidget {
       this.fontWeight,
       required this.text,
       this.size,
-       this.line})
+       this.line,
+      this.fontFamily})
       : super(key: key);
 
   @override
@@ -23,6 +25,9 @@ class TextView extends StatelessWidget {
             fontSize: size,
             fontWeight: fontWeight,
             color: color,
-            decoration: line));
+            decoration: line,
+          fontFamily: fontFamily,
+
+        ));
   }
 }

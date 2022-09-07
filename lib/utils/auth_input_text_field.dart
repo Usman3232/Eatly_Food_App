@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:get/get.dart';
 
 class AuthTextInputField extends StatefulWidget {
   final Color textColor;
@@ -16,6 +18,11 @@ class AuthTextInputField extends StatefulWidget {
   final suffixIcon;
   final prefixIcon;
   final enabled;
+  final Function(String)? onChnage;
+  final String? Function(String? val)?  validator;
+  final List<TextInputFormatter>? inputformatter;
+  final int? maxlength;
+  final EdgeInsetsGeometry? contentpadding;
 
   const AuthTextInputField({
     Key? key,
@@ -33,7 +40,7 @@ class AuthTextInputField extends StatefulWidget {
     this.enabled,
     this.labelText,
     this.radius = 10,
-    this.bordercolor = Colors.black,
+    this.bordercolor = Colors.black, this.onChnage, this.inputformatter, this.maxlength, this.contentpadding, this.validator,
   }) : super(key: key);
 
   @override
@@ -53,24 +60,28 @@ class _TextInputFieldViewState extends State<AuthTextInputField> {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      validator: widget.validator,
+      maxLength: widget.maxlength,
+      inputFormatters: widget.inputformatter,
       enabled: widget.enabled,
       obscureText: isObscure,
+      onChanged: widget.onChnage,
       style: TextStyle(color: widget.textColor),
       controller: widget.textEditingController,
       keyboardType: widget.inputType,
       decoration: InputDecoration(
+        contentPadding:widget.contentpadding ,
         filled: true,
         fillColor: widget.fillColor,
         enabledBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(widget.radius),
-            borderSide: BorderSide(color: widget.bordercolor)),
+            borderSide: BorderSide(color: Colors.transparent)),
         focusedBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(widget.radius),
-            borderSide: BorderSide(color: widget.bordercolor)),
+            borderSide: BorderSide(width: 2,color: widget.bordercolor)),
         hintText: widget.hintText,
         hintStyle:
             TextStyle(fontSize: widget.hintSize, color: widget.hintcolor),
-            prefixIcon: widget.prefixIcon,
         suffixIcon: widget.isPassword
             ? GestureDetector(
                 onTap: () {

@@ -17,22 +17,23 @@ class HomeCatogriesCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: SizeConfig.heightMultiplier * 15,
-      width: SizeConfig.widthMultiplier * 22,
+      height: SizeConfig.heightMultiplier * 5,
+      width: SizeConfig.widthMultiplier * 30,
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(16), color: containercolor),
-      child: Column(
+      child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
-          Image.asset(
-            image,
-          ),
           TextView(
             text: title,
             size: SizeConfig.textMultiplier * 2,
             color: textcolor,
             fontWeight: FontWeight.w600,
-          )
+          ),
+          Image.asset(
+            image,
+            // height: SizeConfig.imageSizeMultiplier*12,
+          ),
         ],
       ),
     );

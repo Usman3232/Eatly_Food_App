@@ -32,7 +32,7 @@ class _HomeNearbyRestaurantCardState extends State<HomeNearbyRestaurantCard> {
   Widget build(BuildContext context) {
     return Container(
       height: SizeConfig.heightMultiplier * 30,
-      width: SizeConfig.widthMultiplier * 80,
+      width: SizeConfig.widthMultiplier * 90,
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(16),
@@ -42,7 +42,7 @@ class _HomeNearbyRestaurantCardState extends State<HomeNearbyRestaurantCard> {
         children: [
           Container(
             height: SizeConfig.heightMultiplier * 17,
-            width: SizeConfig.widthMultiplier * 80,
+            width: SizeConfig.widthMultiplier * 90,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.only(
                   topLeft: Radius.circular(16), topRight: Radius.circular(16)),

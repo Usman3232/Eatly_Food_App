@@ -1,10 +1,9 @@
 import 'package:eatly_foodapp/utils/size_config.dart';
-import 'package:eatly_foodapp/views/bottom_navigation/bottom_navigation_tab.dart';
-import 'package:eatly_foodapp/views/homescreen/homescreen.dart';
 import 'package:eatly_foodapp/views/splash/splash.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 void main() {
   runApp(const MyApp());
@@ -26,11 +25,10 @@ class MyApp extends StatelessWidget {
             return GetMaterialApp(
               theme: ThemeData(
                 scaffoldBackgroundColor: Color(0xffF3F5F6),
+                fontFamily: GoogleFonts.poppins().toString(),
               ),
               debugShowCheckedModeBanner: false,
-              // home: Splash(),
-              // home: HomeScreen(),
-              home: BottomBar(),
+              home: Splash(),
             );
           },
         );
