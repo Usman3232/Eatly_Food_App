@@ -126,6 +126,7 @@ class FavouriteScreen extends StatelessWidget {
                 ),
                 GridView.builder(
                   shrinkWrap: true,
+                  physics: NeverScrollableScrollPhysics(),
                   itemCount: homemostpopular_modal.length,
                   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                       childAspectRatio: SizeConfig.heightMultiplier * .075,
@@ -138,8 +139,8 @@ class FavouriteScreen extends StatelessWidget {
                         title: homemostpopular_modal[index].title,
                         foodstatustitle:
                             homemostpopular_modal[index].foodstatustitle,
-                        foodstatuscontainercolor:
-                            homemostpopular_modal[index].foodstatuscontainercolor,
+                        foodstatuscontainercolor: homemostpopular_modal[index]
+                            .foodstatuscontainercolor,
                         foodstatustitlecolor:
                             homemostpopular_modal[index].foodstatustitlecolor,
                         time: homemostpopular_modal[index].time,
