@@ -44,7 +44,7 @@ class _OnBoardingState extends State<OnBoarding> {
                       text: 'Find Foods ',
                       color: Colors.black,
                       size: SizeConfig.textMultiplier * 3.2,
-                      fontWeight: FontWeight.bold,
+                      fontWeight: FontWeight.w700,
                     ),
                     SizedBox(
                       height: SizeConfig.heightMultiplier * 0.5,
@@ -94,7 +94,7 @@ class _OnBoardingState extends State<OnBoarding> {
                       text: 'Fast Delivery',
                       color: Colors.black,
                       size: SizeConfig.textMultiplier * 3.2,
-                      fontWeight: FontWeight.bold,
+                      fontWeight: FontWeight.w700,
                       fontFamily: GoogleFonts.poppins().toString(),
 
                     ),
@@ -146,7 +146,7 @@ class _OnBoardingState extends State<OnBoarding> {
                       text: 'Skilled Chefs',
                       color: Colors.black,
                       size: SizeConfig.textMultiplier *3.2,
-                      fontWeight: FontWeight.bold,
+                      fontWeight: FontWeight.w700,
                       fontFamily: GoogleFonts.poppins().toString(),
 
                     ),
@@ -203,8 +203,8 @@ class _OnBoardingState extends State<OnBoarding> {
                     decorator: DotsDecorator(
                       activeColor: Color(0xff6C5FBC),
                       color: Color(0xffCDCAE7),
-                      size: const Size(30, 10),
-                      activeSize: const Size(45, 10),
+                      size: const Size(25, 10),
+                      activeSize: const Size(50, 10),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(55),
                       ),

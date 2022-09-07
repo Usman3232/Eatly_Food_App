@@ -1,3 +1,4 @@
+import 'package:eatly_foodapp/utils/aut_btn.dart';
 import 'package:eatly_foodapp/views/payment-screens/payment_method.dart';
 import 'package:eatly_foodapp/views/register.dart';
 import 'package:eatly_foodapp/views/verification/phoneScreen/phoneScreen.dart';
@@ -31,7 +32,7 @@ class _LoginState extends State<Login> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
-        padding: const EdgeInsets.all(12.0),
+        padding: EdgeInsets.symmetric(horizontal: 20),
         child: SingleChildScrollView(
           child: Stack(
             children: [
@@ -41,19 +42,22 @@ class _LoginState extends State<Login> {
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    SizedBox(height: SizeConfig.heightMultiplier*17,),
+                    SizedBox(
+                      height: SizeConfig.heightMultiplier * 17,
+                    ),
                     Container(
-                        child: Text('Login Your \nAccount',textAlign: TextAlign.start,style: registerStyle,)),
-
-
-
-                    const SizedBox(
-                      height: 40,
+                        child: Text(
+                      'Login Your \nAccount',
+                      textAlign: TextAlign.start,
+                      style: registerStyle,
+                    )),
+                    SizedBox(
+                      height: SizeConfig.heightMultiplier * 4.5,
                     ),
                     Padding(
                       padding: const EdgeInsets.symmetric(vertical: 8),
                       child: Card(
-                        elevation: 5,
+                        // elevation: 5,
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(15.0),
                         ),
@@ -67,8 +71,10 @@ class _LoginState extends State<Login> {
                           validator: (value) {
                             _isValid =
                                 EmailValidator.validate(emailController.text);
-                            if (emailController.text.isEmpty || _isValid == false) {
-                              return Message("Please Enter Valid Email", context);
+                            if (emailController.text.isEmpty ||
+                                _isValid == false) {
+                              return Message(
+                                  "Please Enter Valid Email", context);
                             }
                           },
                           decoration: InputDecoration(
@@ -86,15 +92,17 @@ class _LoginState extends State<Login> {
                             focusedBorder: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(15.0),
                                 borderSide: BorderSide(
-                                    color: AppColors.textfeildiconcolor, width: 2)),
+                                    color: AppColors.textfeildiconcolor,
+                                    width: SizeConfig.heightMultiplier * .3)),
                           ),
                         ),
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 8),
+                      padding: EdgeInsets.symmetric(
+                          vertical: SizeConfig.heightMultiplier * 1),
                       child: Card(
-                        elevation: 5,
+                        // elevation: 5,
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(15.0),
                         ),
@@ -108,7 +116,8 @@ class _LoginState extends State<Login> {
                           validator: (value) {
                             if (value!.length < 8) {
                               return Message(
-                                  "Password should be atlas 8 characters", context);
+                                  "Password should be atlas 8 characters",
+                                  context);
                             }
                           },
                           decoration: InputDecoration(
@@ -119,13 +128,13 @@ class _LoginState extends State<Login> {
                                 },
                                 child: obscurePassword == true
                                     ? Icon(
-                                  Icons.visibility_off_outlined,
-                                  color: AppColors.hintstyleColor,
-                                )
+                                        Icons.visibility_off_outlined,
+                                        color: AppColors.hintstyleColor,
+                                      )
                                     : Icon(
-                                  Icons.visibility,
-                                  color: AppColors.textfeildiconcolor,
-                                )),
+                                        Icons.visibility,
+                                        color: AppColors.textfeildiconcolor,
+                                      )),
                             prefixIcon: Icon(
                               Icons.lock_outline_rounded,
                               color: AppColors.textfeildiconcolor,
@@ -140,105 +149,87 @@ class _LoginState extends State<Login> {
                             focusedBorder: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(15.0),
                                 borderSide: BorderSide(
-                                    color: AppColors.textfeildiconcolor, width: 2)),
+                                    color: AppColors.textfeildiconcolor,
+                                    width: 2)),
                           ),
                         ),
                       ),
                     ),
+                    Align(
+                      alignment: Alignment.centerRight,
+                      child: TextButton(
+                          onPressed: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (_) => ForgotPassword()));
+                          },
+                          child: Text(
+                            "Forgot Password?",
+                            style: TextStyle(
+                              color: Colors.grey[600],
+                              letterSpacing: 0.7,
+                              fontSize: 15,
+                              fontWeight: FontWeight.w600,
+                              height: 1.2,
+                            ),
+                          )),
+                    ),
+                    SizedBox(
+                      height: SizeConfig.heightMultiplier * 2,
+                    ),
+                    CustomAuthButton(
+                      callback: () {
+                        if (_formKey.currentState!.validate()) {
+                          Get.to(PhoneScreen());
+                        }
+                      },
+                      colour: AppColors.primarycolor,
+                      title: 'Login',
+                      fontSize: SizeConfig.textMultiplier * 2.5,
+                      height: SizeConfig.heightMultiplier * 8,
+                      width: SizeConfig.widthMultiplier * 100,
+                      radius: 12,
+                      textcolour: Colors.white,
+                    ),
+                    SizedBox(
+                      height: SizeConfig.heightMultiplier * 1,
+                    ),
                     Row(
-                      mainAxisAlignment: MainAxisAlignment.end,
+                      mainAxisAlignment: MainAxisAlignment.center,
                       children: [
+                        Text(
+                          "Create New Account?",
+                          style: TextStyle(
+                              color: AppColors.hintstyleColor,
+                              fontWeight: FontWeight.w500,
+                              fontSize: SizeConfig.textMultiplier * 2),
+                        ),
                         TextButton(
                             onPressed: () {
-                              Navigator.push(
-                                  context,
+                              Navigator.of(context).pushReplacement(
                                   MaterialPageRoute(
-                                      builder: (_) => ForgotPassword()));
+                                      builder: (_) => Register()));
                             },
                             child: Text(
-                              "Forgot Password?",
+                              "Sign up",
                               style: TextStyle(
-                                color: Colors.grey[600],
-                                letterSpacing: 0.7,
-                                fontSize: 15,
+                                fontSize: SizeConfig.textMultiplier * 2,
                                 fontWeight: FontWeight.w600,
-                                height: 1.2,
+                                color: Colors.black87,
                               ),
                             ))
                       ],
                     ),
-                    const SizedBox(
-                      height: 20,
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: <Widget>[
-                        Expanded(
-                          child: NeumorphicButton(
-                            onPressed: () {
-                              if (_formKey.currentState!.validate()) {
-                                Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (_) => const PhoneScreen()));
-                              }
-                            },
-                            style: NeumorphicStyle(
-                                boxShape: NeumorphicBoxShape.roundRect(
-                                    BorderRadius.circular(15)),
-                                color: AppColors.textfeildiconcolor,
-                                depth: 4,
-                                intensity: 2,
-                                surfaceIntensity: 2),
-                            child: const Center(
-                                child: Padding(
-                                  padding: EdgeInsets.all(12.0),
-                                  child: Text(
-                                    "Login",
-                                    style: TextStyle(
-                                        color: Colors.white,
-                                        fontWeight: FontWeight.w500,
-                                        fontSize: 20),
-                                  ),
-                                )),
-                          ),
-                        )
-                      ],
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Text(
-                            "Create New Account?",
-                            style: TextStyle(
-                                color: AppColors.hintstyleColor,
-                                fontWeight: FontWeight.w500,
-                                fontSize: SizeConfig.textMultiplier * 2),
-                          ),
-                          TextButton(
-                              onPressed: () {
-                                Navigator.of(context).pushReplacement(
-                                    MaterialPageRoute(builder: (_) => Register()));
-                              },
-                              child: Text(
-                                "Sign up",
-                                style: TextStyle(
-                                  fontSize: SizeConfig.textMultiplier * 2,
-                                  fontWeight: FontWeight.w600,
-                                  color: Colors.black87,
-                                ),
-                              ))
-                        ],
-                      ),
-                    ),
-                    const SizedBox(
-                      height: 30,
+                    SizedBox(
+                      height: SizeConfig.heightMultiplier * 1.8,
                     ),
                     Divider(
-                      thickness: 0.2,
-                      color: AppColors.hintstyleColor,
+                      thickness: SizeConfig.heightMultiplier * .1,
+                      color: Colors.black12,
+                    ),
+                    SizedBox(
+                      height: SizeConfig.heightMultiplier * 2,
                     ),
                     Align(
                         alignment: Alignment.center,
@@ -250,42 +241,34 @@ class _LoginState extends State<Login> {
                               fontSize: SizeConfig.textMultiplier * 2),
                         )),
                     SizedBox(
-                      height: 30,
+                      height: SizeConfig.heightMultiplier * 3,
                     ),
                     Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Expanded(
-                          child: ElevatedButton(
-                              style: ElevatedButton.styleFrom(
-                                  primary: Color(0xffEBC9C7)),
-                              onPressed: () {
-                                Get.to(const PaymentMethod());
-                              },
-                              child: const Padding(
-                                padding: EdgeInsets.symmetric(vertical: 15),
-                                child: Text(
-                                  "GOOGLE",
-                                  style: TextStyle(
-                                      color: Color(0xffD44638), fontSize: 16),
-                                ),
-                              )),
+                        CustomAuthButton(
+                          callback: () {
+                            Get.to(const PaymentMethod());
+                          },
+                          colour: Color(0xffEBC9C7),
+                          title: 'Google',
+                          fontSize: SizeConfig.textMultiplier * 2,
+                          height: SizeConfig.heightMultiplier * 6,
+                          width: SizeConfig.widthMultiplier * 42.5,
+                          radius: 6,
+                          textcolour: Color(0xffD44638),
                         ),
-                        const SizedBox(
-                          width: 20,
-                        ),
-                        Expanded(
-                          child: ElevatedButton(
-                              style: ElevatedButton.styleFrom(
-                                  primary: const Color(0xffC7D2E5)),
-                              onPressed: () {},
-                              child: const Padding(
-                                padding: EdgeInsets.symmetric(vertical: 15),
-                                child: Text(
-                                  "FACEBOOK",
-                                  style: TextStyle(
-                                      color: Color(0xff4267B2), fontSize: 16),
-                                ),
-                              )),
+                        CustomAuthButton(
+                          callback: () {
+                            // Get.to(const PaymentMethod());
+                          },
+                          colour: Color(0xffC7D2E5),
+                          title: 'FACEBOOK',
+                          fontSize: SizeConfig.textMultiplier * 2,
+                          height: SizeConfig.heightMultiplier * 6,
+                          width: SizeConfig.widthMultiplier * 42.5,
+                          radius: 6,
+                          textcolour: Color(0xff4267B2),
                         ),
                       ],
                     )
@@ -293,8 +276,8 @@ class _LoginState extends State<Login> {
                 ),
               ),
               Positioned(
-                top: SizeConfig.heightMultiplier*2,
-               right: 0,
+                top: SizeConfig.heightMultiplier * 2,
+                right: 0,
                 child: Image.asset(
                   'assets/images/loginbg.png',
                   height: SizeConfig.imageSizeMultiplier * 60,
@@ -305,6 +288,5 @@ class _LoginState extends State<Login> {
         ),
       ),
     );
-
   }
 }
