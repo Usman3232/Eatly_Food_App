@@ -1,4 +1,5 @@
-import 'package:another_flushbar/flushbar.dart';
+import 'package:eatly_foodapp/controller/update_list.dart';
+import 'package:eatly_foodapp/modals/addnewcard.dart';
 import 'package:eatly_foodapp/utils/auth_input_text_field.dart';
 import 'package:eatly_foodapp/utils/constants.dart';
 import 'package:eatly_foodapp/utils/widgets.dart';
@@ -7,6 +8,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:get/get_instance/get_instance.dart';
+import 'package:get/get_navigation/get_navigation.dart';
 import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
 
 import '../../utils/aut_btn.dart';
@@ -41,12 +45,11 @@ class _AddNewCardState extends State<AddNewCard> {
       type: MaskAutoCompletionType.lazy);
 
   final _formKey = GlobalKey<FormState>();
-
-  List<Widget> lstofWidget=[];
+  final _controller  = Get.put((ListController()));
+  // final uhi = Get.put((ListController));
 
   @override
   void initState() {
-    AddCard();
   }
 
   @override
@@ -113,7 +116,7 @@ class _AddNewCardState extends State<AddNewCard> {
                         Container(
                           height: SizeConfig.heightMultiplier * 6,
                           decoration: BoxDecoration(
-                              color: AppColors.textfeildiconcolor,
+                              color: AppColors.primarycolor,
                               borderRadius: const BorderRadius.only(
                                   topLeft: Radius.circular(12),
                                   topRight: Radius.circular(12))),
@@ -226,10 +229,10 @@ class _AddNewCardState extends State<AddNewCard> {
                     child: AuthTextInputField(
                       inputformatter: [maskFormatter],
                       textEditingController: cardNumberController,
-                      textColor: AppColors.textfeildiconcolor,
+                      textColor: AppColors.primarycolor,
                       hintText: 'Enter Card Number',
                       fillColor: Colors.white,
-                      bordercolor: AppColors.textfeildiconcolor,
+                      bordercolor: AppColors.primarycolor,
                       suffixIcon: Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: Image.asset(
@@ -268,10 +271,10 @@ class _AddNewCardState extends State<AddNewCard> {
                     alignment: Alignment.centerLeft,
                     child: AuthTextInputField(
                       textEditingController: cardHolderNameController,
-                      textColor: AppColors.textfeildiconcolor,
+                      textColor: AppColors.primarycolor,
                       hintText: 'Enter Card Holder Name',
                       fillColor: Colors.white,
-                      bordercolor: AppColors.textfeildiconcolor,
+                      bordercolor: AppColors.primarycolor,
                       radius: 12,
                       onChnage: (value) {
                         setState(() {
@@ -307,14 +310,14 @@ class _AddNewCardState extends State<AddNewCard> {
                         child: AuthTextInputField(
                           inputformatter: [fourDigitFormat],
                           contentpadding: EdgeInsets.only(top: 5, left: 5),
-                          textColor: AppColors.textfeildiconcolor,
+                          textColor: AppColors.primarycolor,
                           suffixIcon: Icon(
                             Icons.arrow_drop_down,
                             color: AppColors.hintstyleColor,
                           ),
                           hintText: '0',
                           fillColor: Colors.white,
-                          bordercolor: AppColors.textfeildiconcolor,
+                          bordercolor: AppColors.primarycolor,
                           radius: 8,
                           inputType: TextInputType.name,
                         ),
@@ -324,14 +327,14 @@ class _AddNewCardState extends State<AddNewCard> {
                         height: SizeConfig.heightMultiplier * 5,
                         child: AuthTextInputField(
                           contentpadding: EdgeInsets.only(top: 5, left: 5),
-                          textColor: AppColors.textfeildiconcolor,
+                          textColor: AppColors.primarycolor,
                           suffixIcon: Icon(
                             Icons.arrow_drop_down,
                             color: AppColors.hintstyleColor,
                           ),
                           hintText: '0',
                           fillColor: Colors.white,
-                          bordercolor: AppColors.textfeildiconcolor,
+                          bordercolor: AppColors.primarycolor,
                           radius: 8,
                           inputType: TextInputType.name,
                           inputformatter: [fourDigitFormat],
@@ -342,7 +345,7 @@ class _AddNewCardState extends State<AddNewCard> {
                         height: SizeConfig.heightMultiplier * 5,
                         child: AuthTextInputField(
                           contentpadding: EdgeInsets.only(top: 5, left: 5),
-                          textColor: AppColors.textfeildiconcolor,
+                          textColor: AppColors.primarycolor,
                           suffixIcon: Icon(
                             Icons.help,
                             color: AppColors.hintstyleColor,
@@ -350,7 +353,7 @@ class _AddNewCardState extends State<AddNewCard> {
                           hintText: '0',
                           inputformatter: [threeDigitFormat],
                           fillColor: Colors.white,
-                          bordercolor: AppColors.textfeildiconcolor,
+                          bordercolor: AppColors.primarycolor,
                           radius: 8,
                           inputType: TextInputType.name,
                         ),
@@ -371,24 +374,23 @@ class _AddNewCardState extends State<AddNewCard> {
                   height: SizeConfig.heightMultiplier * 7,
                   width: SizeConfig.widthMultiplier * 0,
                   radius: 15.09,
-                  callback: () async {
+                  callback: ()  {
                     if (cardHolderNameController.text.isEmpty &&
                         cardNumberController.text.isEmpty) {
                     Message('Please Enter Your Data', context);
                       } else {
-                      setState(() {
-                        lstofWidget.add(AddCard());}
+
+                      _controller.updateCard(
+                          NewCard(CardHolderNumber:cardNumberController.text.split(' ').last, CardHolderName: cardHolderNameController.text)
                       );
-                      Get.off(Payment(),arguments: [
-                        cardHolderNameController.text,
-                        cardNumberController.text,
-                        lstofWidget,
-                        print(lstofWidget),
-                      ]);
+                      // setState(() {
+                        // lstofWidget.add(AddCard());}
+                      // );
+                      Get.off(Payment());
                     }
                   },
                   title: 'Add Card',
-                  colour: AppColors.textfeildiconcolor,
+                  colour: AppColors.primarycolor,
                 ),
               ),
             ),

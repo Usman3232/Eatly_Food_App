@@ -28,20 +28,19 @@ class _VerifyEmailState extends State<VerifyEmail> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromRGBO(255, 255, 255, 20),
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 25),
+          padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
           child: SingleChildScrollView(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const SizedBox(
-                  height: 30,
+                SizedBox(
+                  height: SizeConfig.heightMultiplier * 3,
                 ),
                 SizedBox(
-                  height: 50,
-                  width: 50,
+                  height: SizeConfig.heightMultiplier * 6,
+                  width: SizeConfig.widthMultiplier * 13,
                   child: Neumorphic(
                       style: NeumorphicStyle(
                           shape: NeumorphicShape.concave,
@@ -54,9 +53,9 @@ class _VerifyEmailState extends State<VerifyEmail> {
                         child: IconButton(
                           icon: Container(
                               margin: const EdgeInsets.only(left: 10),
-                              child: const Icon(
+                              child: Icon(
                                 Icons.arrow_back_ios,
-                                size: 20,
+                                size: SizeConfig.imageSizeMultiplier * 6,
                                 color: Colors.black87,
                               )),
                           onPressed: () {
@@ -67,34 +66,33 @@ class _VerifyEmailState extends State<VerifyEmail> {
                       )),
                 ),
                 SizedBox(
-                  height: 50,
+                  height: SizeConfig.heightMultiplier * 5,
                 ),
                 Container(
                   width: MediaQuery.of(context).size.width,
                   child: Card(
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(30)),
-                    elevation: 5,
                     child: Padding(
                       padding: const EdgeInsets.all(20.0),
                       child: Column(
                         children: [
-                          const SizedBox(
-                            height: 20,
+                          SizedBox(
+                            height: SizeConfig.heightMultiplier * 2,
                           ),
                           Text(
                             "Verify Phone Number",
                             style: titleStyle,
                           ),
-                          const SizedBox(
-                            height: 10,
+                          SizedBox(
+                            height: SizeConfig.heightMultiplier * 10,
                           ),
                           Text(
                             "We Have Sent Code To Your Phone Number",
                             style: subtitleStyle,
                           ),
-                          const SizedBox(
-                            height: 30,
+                          SizedBox(
+                            height: SizeConfig.heightMultiplier * 3,
                           ),
                           Text(
                             email.toString(),
@@ -103,20 +101,20 @@ class _VerifyEmailState extends State<VerifyEmail> {
                                 fontWeight: FontWeight.w500,
                                 fontSize: SizeConfig.textMultiplier * 1.8),
                           ),
-                          const SizedBox(
-                            height: 30,
+                          SizedBox(
+                            height: SizeConfig.heightMultiplier * 3,
                           ),
                           OTPTextField(
                             length: 4,
                             otpFieldStyle: OtpFieldStyle(
-                              focusBorderColor: AppColors.textfeildiconcolor,
+                              focusBorderColor: AppColors.primarycolor,
                             ),
                             width: MediaQuery.of(context).size.width,
                             fieldWidth: 50,
                             style: TextStyle(
                                 fontSize: SizeConfig.textMultiplier * 3,
                                 fontWeight: FontWeight.w700,
-                                color: AppColors.textfeildiconcolor),
+                                color: AppColors.primarycolor),
                             textFieldAlignment: MainAxisAlignment.spaceAround,
                             fieldStyle: FieldStyle.box,
                             onCompleted: (pin) {
@@ -126,8 +124,8 @@ class _VerifyEmailState extends State<VerifyEmail> {
                               print("Completed: " + pin);
                             },
                           ),
-                          const SizedBox(
-                            height: 30,
+                          SizedBox(
+                            height: SizeConfig.heightMultiplier * 3,
                           ),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.center,
@@ -139,17 +137,18 @@ class _VerifyEmailState extends State<VerifyEmail> {
                                       return Message(
                                           "Enter Your OTP Number", context);
                                     }
-                                    Navigator.of(context).push(MaterialPageRoute(
-                                        builder: (_) => ResetPassword()));
+                                    Navigator.of(context).push(
+                                        MaterialPageRoute(
+                                            builder: (_) => ResetPassword()));
                                   },
                                   style: NeumorphicStyle(
                                       boxShape: NeumorphicBoxShape.roundRect(
                                           BorderRadius.circular(15)),
-                                      color: AppColors.textfeildiconcolor,
+                                      color: AppColors.primarycolor,
                                       depth: 4,
                                       intensity: 2,
                                       surfaceIntensity: 2),
-                                  child:  Center(
+                                  child: Center(
                                       child: Padding(
                                     padding: EdgeInsets.all(12.0),
                                     child: Text(
@@ -157,7 +156,8 @@ class _VerifyEmailState extends State<VerifyEmail> {
                                       style: TextStyle(
                                         color: Colors.white,
                                         fontWeight: FontWeight.w500,
-                                        fontSize: SizeConfig.textMultiplier*1.8,
+                                        fontSize:
+                                            SizeConfig.textMultiplier * 1.8,
                                       ),
                                     ),
                                   )),
@@ -165,8 +165,8 @@ class _VerifyEmailState extends State<VerifyEmail> {
                               )
                             ],
                           ),
-                          const SizedBox(
-                            height: 20,
+                          SizedBox(
+                            height: SizeConfig.heightMultiplier * 2,
                           ),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.center,
@@ -177,28 +177,28 @@ class _VerifyEmailState extends State<VerifyEmail> {
                                   style: NeumorphicStyle(
                                       boxShape: NeumorphicBoxShape.roundRect(
                                           BorderRadius.circular(15)),
-                                      color:Color(0xffDBD9EE),
+                                      color: Color(0xffDBD9EE),
                                       depth: 4,
                                       intensity: 2,
                                       surfaceIntensity: 2),
-                                  child:  Center(
+                                  child: Center(
                                       child: Padding(
                                     padding: EdgeInsets.all(12.0),
                                     child: Text(
                                       "Send Again",
                                       style: TextStyle(
-                                        color: AppColors.textfeildiconcolor,
-                                        fontSize: SizeConfig.textMultiplier*1.8,
-                                        fontWeight: FontWeight.w500
-                                      ),
+                                          color: AppColors.primarycolor,
+                                          fontSize:
+                                              SizeConfig.textMultiplier * 1.8,
+                                          fontWeight: FontWeight.w500),
                                     ),
                                   )),
                                 ),
                               )
                             ],
                           ),
-                          const SizedBox(
-                            height: 30,
+                          SizedBox(
+                            height: SizeConfig.heightMultiplier * 3,
                           ),
                         ],
                       ),

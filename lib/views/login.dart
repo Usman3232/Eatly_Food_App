@@ -63,7 +63,7 @@ class _LoginState extends State<Login> {
                         ),
                         child: TextFormField(
                           style: TextStyle(
-                              color: AppColors.textfeildiconcolor,
+                              color: AppColors.primarycolor,
                               fontWeight: FontWeight.w400),
                           controller: emailController,
                           keyboardType: TextInputType.emailAddress,
@@ -80,7 +80,7 @@ class _LoginState extends State<Login> {
                           decoration: InputDecoration(
                             prefixIcon: Icon(
                               Icons.mail_outline_outlined,
-                              color: AppColors.textfeildiconcolor,
+                              color: AppColors.primarycolor,
                             ),
                             hintText: "Enter your Email",
                             hintStyle: TextStyle(
@@ -92,7 +92,7 @@ class _LoginState extends State<Login> {
                             focusedBorder: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(15.0),
                                 borderSide: BorderSide(
-                                    color: AppColors.textfeildiconcolor,
+                                    color: AppColors.primarycolor,
                                     width: SizeConfig.heightMultiplier * .3)),
                           ),
                         ),
@@ -108,7 +108,7 @@ class _LoginState extends State<Login> {
                         ),
                         child: TextFormField(
                           style: TextStyle(
-                              color: AppColors.textfeildiconcolor,
+                              color: AppColors.primarycolor,
                               fontWeight: FontWeight.w400),
                           controller: passwordController,
                           obscureText: obscurePassword,
@@ -133,11 +133,11 @@ class _LoginState extends State<Login> {
                                       )
                                     : Icon(
                                         Icons.visibility,
-                                        color: AppColors.textfeildiconcolor,
+                                        color: AppColors.primarycolor,
                                       )),
                             prefixIcon: Icon(
                               Icons.lock_outline_rounded,
-                              color: AppColors.textfeildiconcolor,
+                              color: AppColors.primarycolor,
                             ),
                             hintText: "Password",
                             hintStyle: TextStyle(
@@ -149,7 +149,7 @@ class _LoginState extends State<Login> {
                             focusedBorder: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(15.0),
                                 borderSide: BorderSide(
-                                    color: AppColors.textfeildiconcolor,
+                                    color: AppColors.primarycolor,
                                     width: 2)),
                           ),
                         ),

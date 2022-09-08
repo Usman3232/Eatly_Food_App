@@ -34,7 +34,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
       body: Stack(
         children: [
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 40),
+            padding:  EdgeInsets.symmetric(horizontal: 20, vertical: 40),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -43,7 +43,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                 ),
                 SizedBox(
                   height: SizeConfig.heightMultiplier * 6,
-                  width: SizeConfig.widthMultiplier * 12,
+                  width: SizeConfig.widthMultiplier * 13,
                   child: Neumorphic(
                       style: NeumorphicStyle(
                           shape: NeumorphicShape.concave,
@@ -96,8 +96,8 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                     borderRadius: BorderRadius.circular(8.0),
                   ),
                   child: ListTile(
-                    focusColor: AppColors.textfeildiconcolor,
-                    selectedColor: AppColors.textfeildiconcolor,
+                    focusColor: AppColors.primarycolor,
+                    selectedColor: AppColors.primarycolor,
                     onTap: () {
                       setState(() {
                         isSelected1 = !isSelected1;
@@ -112,7 +112,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                     shape: RoundedRectangleBorder(
                       side: isSelected1 == true
                           ? BorderSide(
-                              color: AppColors.textfeildiconcolor,
+                              color: AppColors.primarycolor,
                               width: 1.5,
                             )
                           : const BorderSide(
@@ -146,8 +146,8 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                     borderRadius: BorderRadius.circular(8.0),
                   ),
                   child: ListTile(
-                    focusColor: AppColors.textfeildiconcolor,
-                    selectedColor: AppColors.textfeildiconcolor,
+                    focusColor: AppColors.primarycolor,
+                    selectedColor: AppColors.primarycolor,
                     onTap: () {
                       setState(() {
                         isSelected2 = !isSelected2;
@@ -162,7 +162,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                     shape: RoundedRectangleBorder(
                       side: isSelected2 == true
                           ? BorderSide(
-                              color: AppColors.textfeildiconcolor,
+                              color: AppColors.primarycolor,
                               width: 1.5,
                             )
                           : const BorderSide(
@@ -213,7 +213,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                         style: NeumorphicStyle(
                             boxShape: NeumorphicBoxShape.roundRect(
                                 BorderRadius.circular(8)),
-                            color: AppColors.textfeildiconcolor,
+                            color: AppColors.primarycolor,
                             depth: 4,
                             intensity: 2,
                             surfaceIntensity: 2),

@@ -26,8 +26,8 @@ class MostPopular extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     SizedBox(
-                      height: 50,
-                      width: 50,
+                      height: SizeConfig.heightMultiplier*6,
+                      width: SizeConfig.widthMultiplier*13,
                       child: Neumorphic(
                         style: NeumorphicStyle(
                             shape: NeumorphicShape.concave,

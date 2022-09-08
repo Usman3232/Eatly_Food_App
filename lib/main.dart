@@ -1,5 +1,6 @@
 import 'package:eatly_foodapp/utils/size_config.dart';
 import 'package:eatly_foodapp/views/splash/splash.dart';
+import 'package:eatly_foodapp/views/verification/emailScreen/emailScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
@@ -29,6 +30,7 @@ class MyApp extends StatelessWidget {
               ),
               debugShowCheckedModeBanner: false,
               home: Splash(),
+              // home: EmailScreen(),
             );
           },
         );

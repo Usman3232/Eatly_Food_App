@@ -59,7 +59,7 @@ class _RegisterState extends State<Register> {
                         ),
                         child: TextFormField(
                           style: TextStyle(
-                              color: AppColors.textfeildiconcolor,
+                              color: AppColors.primarycolor,
                               fontWeight: FontWeight.w500,
                               fontSize: SizeConfig.textMultiplier * 2),
                           controller: usernameController,
@@ -73,21 +73,16 @@ class _RegisterState extends State<Register> {
                           decoration: InputDecoration(
                             prefixIcon: Icon(
                               Icons.person_outline_rounded,
-                              color: AppColors.textfeildiconcolor,
+                              color: AppColors.primarycolor,
                             ),
                             hintText: 'Full Name',
                             labelStyle: const TextStyle(color: Colors.black),
                             contentPadding: const EdgeInsets.all(25),
-                            // disabledBorder:  OutlineInputBorder(
-                            //   borderSide: BorderSide(color: Colors.teal,width: 2.5),
-                            //   gapPadding: 8,
-                            //   borderRadius: BorderRadius.all(Radius.circular(15),
-                            //   ),
                             enabledBorder: InputBorder.none,
                             focusedBorder: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(15.0),
                                 borderSide: BorderSide(
-                                    color: AppColors.textfeildiconcolor,
+                                    color: AppColors.primarycolor,
                                     width: SizeConfig.heightMultiplier * .3)),
                           ),
                         ),
@@ -101,7 +96,7 @@ class _RegisterState extends State<Register> {
                         ),
                         child: TextFormField(
                           style: TextStyle(
-                            color: AppColors.textfeildiconcolor,
+                            color: AppColors.primarycolor,
                             fontSize: SizeConfig.textMultiplier * 2,
                             fontWeight: FontWeight.w500,
                           ),
@@ -120,7 +115,7 @@ class _RegisterState extends State<Register> {
                           decoration: InputDecoration(
                             prefixIcon: Icon(
                               Icons.mail_outline_outlined,
-                              color: AppColors.textfeildiconcolor,
+                              color: AppColors.primarycolor,
                             ),
                             hintText: 'Enter Your Email',
                             labelStyle: const TextStyle(color: Colors.black),
@@ -129,7 +124,7 @@ class _RegisterState extends State<Register> {
                             focusedBorder: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(15.0),
                                 borderSide: BorderSide(
-                                    color: AppColors.textfeildiconcolor,
+                                    color: AppColors.primarycolor,
                                     width: SizeConfig.heightMultiplier * .3)),
                           ),
                         ),
@@ -143,7 +138,7 @@ class _RegisterState extends State<Register> {
                         ),
                         child: TextFormField(
                           style: TextStyle(
-                            color: AppColors.textfeildiconcolor,
+                            color: AppColors.primarycolor,
                             fontWeight: FontWeight.w500,
                             fontSize: SizeConfig.textMultiplier * 2,
                           ),
@@ -170,11 +165,11 @@ class _RegisterState extends State<Register> {
                                       )
                                     : Icon(
                                         Icons.visibility,
-                                        color: AppColors.textfeildiconcolor,
+                                        color: AppColors.primarycolor,
                                       )),
                             prefixIcon: Icon(
                               Icons.lock_outline_rounded,
-                              color: AppColors.textfeildiconcolor,
+                              color: AppColors.primarycolor,
                             ),
                             hintText: 'Password',
                             labelStyle: const TextStyle(color: Colors.black),
@@ -183,7 +178,7 @@ class _RegisterState extends State<Register> {
                             focusedBorder: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(15.0),
                                 borderSide: BorderSide(
-                                    color: AppColors.textfeildiconcolor,
+                                    color: AppColors.primarycolor,
                                     width: SizeConfig.heightMultiplier * .3)),
                           ),
                         ),
@@ -205,7 +200,7 @@ class _RegisterState extends State<Register> {
                             style: NeumorphicStyle(
                                 boxShape: NeumorphicBoxShape.roundRect(
                                     BorderRadius.circular(15)),
-                                color: AppColors.textfeildiconcolor,
+                                color: AppColors.primarycolor,
                                 depth: 4,
                                 intensity: 2,
                                 surfaceIntensity: 2),
