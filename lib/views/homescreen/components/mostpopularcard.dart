@@ -16,12 +16,14 @@ class MostPopularCard extends StatefulWidget {
     required this.checkstatus,
     required this.price,
     required this.rating,
+    required this.onPressed,
   }) : super(key: key);
   final String image, title, foodstatustitle;
   final Color foodstatuscontainercolor, foodstatustitlecolor;
   final int time;
   final double price, rating;
   bool checkstatus;
+  final VoidCallback onPressed;
 
   @override
   State<MostPopularCard> createState() => _MostPopularCardState();
@@ -57,6 +59,7 @@ class _MostPopularCardState extends State<MostPopularCard> {
                     : Icon(
                         Icons.favorite_border_outlined,
                         size: SizeConfig.imageSizeMultiplier * 8,
+                        color: AppColors.primarycolor,
                       ),
               ),
             ),
@@ -123,19 +126,15 @@ class _MostPopularCardState extends State<MostPopularCard> {
                             fontWeight: FontWeight.w600,
                           ),
                           Spacer(),
-                          Container(
-                            height: SizeConfig.heightMultiplier * 5,
-                            width: SizeConfig.widthMultiplier * 10,
-                            decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(12),
-                                color: Colors.black),
-                            child: IconButton(
-                              padding: EdgeInsets.only(right: 1),
-                              onPressed: () {
-                                setState(() {});
-                                print("aaa");
-                              },
-                              icon: Icon(
+                          InkWell(
+                            onTap: widget.onPressed,
+                            child: Container(
+                              height: SizeConfig.heightMultiplier * 5,
+                              width: SizeConfig.widthMultiplier * 10,
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(12),
+                                  color: Colors.black),
+                              child: Icon(
                                 Icons.add,
                                 color: Colors.white,
                               ),

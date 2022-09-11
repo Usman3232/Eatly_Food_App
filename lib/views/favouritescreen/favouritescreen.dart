@@ -1,5 +1,7 @@
 import 'package:eatly_foodapp/utils/TextView.dart';
+import 'package:eatly_foodapp/views/fooddetails/fooddetails.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import '../../modals/homecategoriesmodal.dart';
 import '../../modals/homemostpopularmodal.dart';
@@ -146,6 +148,10 @@ class FavouriteScreen extends StatelessWidget {
                         time: homemostpopular_modal[index].time,
                         checkstatus: homemostpopular_modal[index].checkstatus,
                         price: homemostpopular_modal[index].price,
+                        onPressed: () {
+                          Get.to(FoodDetail(
+                              product: homemostpopular_modal[index]));
+                        },
                         rating: homemostpopular_modal[index].rating);
                   },
                 )

@@ -6,6 +6,7 @@ import 'package:eatly_foodapp/utils/TextView.dart';
 import 'package:eatly_foodapp/utils/auth_input_text_field.dart';
 import 'package:eatly_foodapp/utils/constants.dart';
 import 'package:eatly_foodapp/utils/size_config.dart';
+import 'package:eatly_foodapp/views/fooddetails/fooddetails.dart';
 import 'package:eatly_foodapp/views/mostpopular/mostpopular.dart';
 import 'package:eatly_foodapp/views/nearbyrestaurants/nearbyrestaurants.dart';
 import 'package:flutter/material.dart';
@@ -219,6 +220,10 @@ class _HomeScreenState extends State<HomeScreen> {
                             price: homemostpopular_modal[index].price,
                             checkstatus:
                                 homemostpopular_modal[index].checkstatus,
+                            onPressed: () {
+                              Get.to(FoodDetail(
+                                  product: homemostpopular_modal[index]));
+                            },
                             rating: homemostpopular_modal[index].rating),
                       );
                     },

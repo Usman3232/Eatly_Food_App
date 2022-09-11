@@ -1,5 +1,6 @@
 import 'package:eatly_foodapp/utils/TextView.dart';
 import 'package:eatly_foodapp/utils/size_config.dart';
+import 'package:eatly_foodapp/views/fooddetails/fooddetails.dart';
 import 'package:eatly_foodapp/views/homescreen/components/mostpopularcard.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
@@ -26,8 +27,8 @@ class MostPopular extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     SizedBox(
-                      height: SizeConfig.heightMultiplier*6,
-                      width: SizeConfig.widthMultiplier*13,
+                      height: SizeConfig.heightMultiplier * 6,
+                      width: SizeConfig.widthMultiplier * 13,
                       child: Neumorphic(
                         style: NeumorphicStyle(
                             shape: NeumorphicShape.concave,
@@ -104,25 +105,29 @@ class MostPopular extends StatelessWidget {
                     shrinkWrap: true,
                     itemCount: homemostpopular_modal.length,
                     gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                      
                         childAspectRatio: SizeConfig.heightMultiplier * .075,
                         mainAxisSpacing: SizeConfig.heightMultiplier * 2,
                         crossAxisSpacing: SizeConfig.widthMultiplier * 4,
                         crossAxisCount: 2),
                     itemBuilder: (context, index) {
                       return MostPopularCard(
-                          image: homemostpopular_modal[index].image,
-                          title: homemostpopular_modal[index].title,
-                          foodstatustitle:
-                              homemostpopular_modal[index].foodstatustitle,
-                          foodstatuscontainercolor: homemostpopular_modal[index]
-                              .foodstatuscontainercolor,
-                          foodstatustitlecolor:
-                              homemostpopular_modal[index].foodstatustitlecolor,
-                          time: homemostpopular_modal[index].time,
-                          checkstatus: homemostpopular_modal[index].checkstatus,
-                          price: homemostpopular_modal[index].price,
-                          rating: homemostpopular_modal[index].rating);
+                        image: homemostpopular_modal[index].image,
+                        title: homemostpopular_modal[index].title,
+                        foodstatustitle:
+                            homemostpopular_modal[index].foodstatustitle,
+                        foodstatuscontainercolor: homemostpopular_modal[index]
+                            .foodstatuscontainercolor,
+                        foodstatustitlecolor:
+                            homemostpopular_modal[index].foodstatustitlecolor,
+                        time: homemostpopular_modal[index].time,
+                        checkstatus: homemostpopular_modal[index].checkstatus,
+                        price: homemostpopular_modal[index].price,
+                        rating: homemostpopular_modal[index].rating,
+                        onPressed: () {
+                          Get.to(FoodDetail(
+                              product: homemostpopular_modal[index]));
+                        },
+                      );
                     },
                   ),
                 )

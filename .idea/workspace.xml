@@ -5,17 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="73a1e6d4-431b-45dc-bfe1-5a88ea94707d" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.flutter-plugins" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.flutter-plugins-dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins-dependencies" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/modals/homemostpopularmodal.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/modals/homemostpopularmodal.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/modals/homenearbyrestaurentmodal.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/modals/homenearbyrestaurentmodal.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/utils/aut_btn.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/utils/aut_btn.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/views/favouritescreen/favouritescreen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/views/favouritescreen/favouritescreen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/views/homescreen/components/homecatogriescard.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/views/homescreen/components/homecatogriescard.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/views/homescreen/components/mostpopularcard.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/views/homescreen/components/mostpopularcard.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/views/homescreen/components/nearbyrestaurentcard.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/views/homescreen/components/nearbyrestaurentcard.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/views/homescreen/homescreen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/views/homescreen/homescreen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/views/notificationscreen/notificationscreen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/views/notificationscreen/notificationscreen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/views/splash/splash.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/views/login.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/views/login.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/views/onboarding/on_boarding.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/views/onboarding/on_boarding.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/macos/Flutter/GeneratedPluginRegistrant.swift" beforeDir="false" afterPath="$PROJECT_DIR$/macos/Flutter/GeneratedPluginRegistrant.swift" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
